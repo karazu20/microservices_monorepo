@@ -1,0 +1,75 @@
+/* estilo de todo el texto: fuente y tamaño */
+.reporteDeCredito {
+  font-family: sans-serif;
+  font-size: x-small;
+}
+
+/* tablas */
+.resumen_cdc_tabla {
+  border-spacing: 0px;
+  border-collapse: collapse;
+  width: 100%;
+}
+.resumen_cdc_tabla tbody tr td,
+.resumen_cdc_tabla thead tr th {
+  text-align: center;
+  font-size: x-small;
+  border: 1px solid black;
+}
+
+/* etiquetas */
+.etiqueta {
+  font-weight: bold;
+  text-align: right;
+  float: left;
+}
+
+/* divs caja */
+.caja {
+  padding: 10px;
+}
+
+.caja div p span {
+  width: 50%;
+  padding-right: 5px;
+  padding-left: 0px;
+}
+
+/* titulos */
+.titulo,
+.subtitulo {
+  font-weight: bold;
+}
+
+.titulo {
+  font-size: x-large;
+  text-align: center;
+}
+.subtitulo {
+  font-size: large;
+}
+
+/* area encabezado */
+.encabezado {
+  font-size: xx-small;
+  float: right;
+  width: 37%;
+  position: absolute;
+  top: 15px;
+  right: 0px;
+}
+
+/* area datos generales */
+.datosGenerales {
+  font-size: small;
+}
+/* div de datos (sin subtitulo) */
+#datosGenerales {
+  border: 1px solid black;
+  width: 45%;
+}
+
+/* tabla de area consultas */
+.consultas table {
+  width: 33%;
+}

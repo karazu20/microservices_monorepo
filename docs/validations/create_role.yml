@@ -1,0 +1,13 @@
+Create a new role of validations in database validations
+---
+parameters:
+  - in: body
+    name: rol
+    type: string
+    required: true
+responses:
+  201:
+    description: A single role item
+    schema:
+      data: object
+

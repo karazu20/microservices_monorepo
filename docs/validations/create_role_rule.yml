@@ -1,0 +1,17 @@
+Create a new rule of validations in database validations
+---
+parameters:
+  - in: body
+    name: regla_id
+    type: integer
+    required: true
+  - in: body
+    name: rol_id
+    type: integer
+    required: true
+responses:
+  201:
+    description: A single role rule item
+    schema:
+      data: object
+

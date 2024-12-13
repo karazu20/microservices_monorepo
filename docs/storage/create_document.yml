@@ -1,0 +1,32 @@
+Create Document
+---
+parameters:
+  - in: body
+    name: tipo_documento_id
+    type: integer
+    required: true
+  - in: body
+    name: tipo_archivo
+    type: string
+    required: true
+  - in: body
+    name: podemos_id
+    type: string
+    required: true
+  - in: body
+    name: comentario
+    type: string
+    required: true
+  - in: body
+    name: tipo_entidad
+    type: string
+    required: true
+  - in: body
+    name: file
+    type: string
+    required: true
+responses:
+  201:
+    description: Generate Document
+    schema:
+      data: object

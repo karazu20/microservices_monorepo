@@ -1,0 +1,21 @@
+Create a new rule execution of validations in database validations
+---
+parameters:
+  - in: body
+    name: etapa_id
+    type: integer
+    required: true
+  - in: body
+    name: regla_id
+    type: integer
+    required: true
+  - in: body
+    name: estatus_ejecucion_regla_id
+    type: integer
+    required: true
+responses:
+  201:
+    description: A single rule execution item
+    schema:
+      data: object
+

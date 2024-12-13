@@ -1,0 +1,22 @@
+Execute validations
+---
+parameters:
+  - in: body
+    required: true
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          id_mambu:
+            type: string
+          etapa:
+            type: string
+          tipo:
+            type: string
+responses:
+  200:
+    description: Validations execute
+    schema:
+      data: object
+

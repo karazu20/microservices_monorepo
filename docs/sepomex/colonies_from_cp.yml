@@ -1,0 +1,22 @@
+Get all colonies from postal code
+---
+parameters:
+  - in: query
+    name: codigo_postal
+    type: string
+    required: true
+responses:
+  200:
+    description: A single user item
+    schema:
+      data: array
+      items:
+        type: object
+        properties:
+          colonia:
+            type: string
+          codigo_postal:
+            type: string
+          estado:
+            type: string
+

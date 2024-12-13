@@ -1,0 +1,24 @@
+Consult nip
+---
+parameters:
+  - in: body
+    name: id
+    type: number
+    required: true
+  - in: body
+    name: nombre
+    type: string
+    required: true
+  - in: body
+    name: telefono
+    type: string
+    required: true
+  - in: body
+    name: curp
+    type: string
+    required: true
+responses:
+  201:
+    description: Generate NIP
+    schema:
+      data: object

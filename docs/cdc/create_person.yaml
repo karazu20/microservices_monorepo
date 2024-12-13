@@ -1,0 +1,65 @@
+Create a new person
+---
+parameters:
+  - in: body
+    name: nombre
+    type: string
+    required: true
+  - in: body
+    name: apellido_paterno
+    type: string
+    required: true
+  - in: body
+    name: apellido_materno
+    type: string
+    required: true
+  - in: body
+    name: fecha_nacimiento
+    type: date
+    required: true
+  - in: body
+    name: curp
+    type: string
+    required: true
+  - in: body
+    name: rfc
+    type: string
+    required: true
+  - in: body
+    name: nacionalidad
+    type: string
+    required: false
+  - in: body
+    name: direccion
+    type: string
+    required: true
+  - in: body
+    name: colonia
+    type: string
+    required: true
+  - in: body
+    name: delegacion
+    type: string
+    required: true
+  - in: body
+    name: ciudad
+    type: string
+    required: true
+  - in: body
+    name: estado
+    type: string
+    required: true
+  - in: body
+    name: codigo_postal
+    type: string
+    required: true
+  - in: body
+    name: empresa_empleo
+    type: string
+    required: false
+responses:
+  201:
+    description: A single user item
+    schema:
+      data: object
+

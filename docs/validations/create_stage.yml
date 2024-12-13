@@ -1,0 +1,13 @@
+Create a new stage of validations in database validations
+---
+parameters:
+  - in: body
+    name: etapa
+    type: string
+    required: true
+responses:
+  201:
+    description: A single stage item
+    schema:
+      data: object
+

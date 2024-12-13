@@ -1,0 +1,31 @@
+config_rules:
+  is_past_due_account:
+    amount: 3500
+    months: 12
+  is_broken_account:
+    prevention_keys:
+      - UP
+      - PC
+      - LO
+      - RN
+    amount: 1500
+    months: 12
+  are_two_broken_accounts:
+    prevention_keys:
+      - UP
+      - PC
+      - LO
+      - RN
+      - SG
+    total: 2
+    months: 12
+  are_three_addresses:
+    months: 6
+    max_addresses: 3
+  is_revolving_account:
+    account_type: R
+  is_fraudulent:
+    prevention_keys:
+      - FD
+      - SG
+      - IM

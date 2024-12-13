@@ -1,0 +1,17 @@
+Create a new comment in mambu
+---
+parameters:
+  - in: body
+    name: id_mambu
+    type: string
+    required: true
+  - in: body
+    name: comment
+    type: string
+    required: true
+responses:
+  201:
+    description: Create a comment in mambu
+    schema:
+      data: object
+

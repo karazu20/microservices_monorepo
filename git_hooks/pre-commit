@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+git stash push --keep-index --include-untracked -q
+
+make lint
+EXIT_CODE=$?
+
+git stash pop -q
+
+exit $EXIT_CODE

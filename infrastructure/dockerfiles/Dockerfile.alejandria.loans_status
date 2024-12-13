@@ -1,0 +1,4 @@
+FROM podemosprogresar/alejandria-base
+
+COPY src/loans_status src/loans_status
+COPY src/loans_status/app.py app.py

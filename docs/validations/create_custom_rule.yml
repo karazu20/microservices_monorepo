@@ -1,0 +1,30 @@
+Create a new custom rule of validations in database validations
+---
+parameters:
+  - in: body
+    name: etapa_id
+    type: integer
+    required: true
+  - in: body
+    name: id_object_mambu
+    type: string
+    required: true
+  - in: body
+    name: tipo
+    type: string
+    required: true
+  - in: body
+    name: regla_id
+    type: integer
+    required: true
+  - in: body
+    name: estatus_ejecucion_regla_id
+    type: integer
+    required: true
+responses:
+  201:
+    description: A single custom rule execution item
+    schema:
+      data: object
+
+

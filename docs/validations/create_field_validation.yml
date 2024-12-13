@@ -1,0 +1,21 @@
+Create a new field validations in database validations
+---
+parameters:
+  - in: body
+    name: regla_id
+    type: integer
+    required: true
+  - in: body
+    name: campo
+    type: string
+    required: true
+  - in: body
+    name: requerido
+    type: boolean
+    required: true
+responses:
+  201:
+    description: A single field validations item
+    schema:
+      data: object
+

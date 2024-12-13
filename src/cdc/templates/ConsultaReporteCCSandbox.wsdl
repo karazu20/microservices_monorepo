@@ -1,0 +1,47 @@
+<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.reporteCC.cc.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://ws.reporteCC.cc.com/" name="ConsultaReporteCCService">
+<types>
+<xsd:schema xmlns:ns0="http://ws.reporteCC.cc.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ws.reporteCC.cc.com/">
+<xsd:complexType name="generaReporte">
+<xsd:sequence>
+<xsd:element name="arg0" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="generaReporteResponse">
+<xsd:sequence>
+<xsd:element name="return" type="xsd:string" minOccurs="0"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="generaReporte" type="ns0:generaReporte"/>
+<xsd:element name="generaReporteResponse" type="ns0:generaReporteResponse"/>
+</xsd:schema>
+</types>
+<message name="generaReporte">
+<part name="parameters" element="tns:generaReporte"/>
+</message>
+<message name="generaReporteResponse">
+<part name="parameters" element="tns:generaReporteResponse"/>
+</message>
+<portType name="ConsultaReporteCCPortType">
+<operation name="generaReporte">
+<input wsam:Action="http://ws.reporteCC.cc.com/ConsultaReporteCCPortType/generaReporteRequest" message="tns:generaReporte"/>
+<output wsam:Action="http://ws.reporteCC.cc.com/ConsultaReporteCCPortType/generaReporteResponse" message="tns:generaReporteResponse"/>
+</operation>
+</portType>
+<binding name="ConsultaReporteCCPortTypePortBinding" type="tns:ConsultaReporteCCPortType">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="generaReporte">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+</binding>
+<service name="ConsultaReporteCCService">
+<port name="ConsultaReporteCCPortTypePort" binding="tns:ConsultaReporteCCPortTypePortBinding">
+<soap:address location="https://otorgantes.circulodecredito.com.mx/ConsultaReporteCCTest/ConsultaReporteCCServiceTest"/>
+</port>
+</service>
+</definitions>

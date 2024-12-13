@@ -1,0 +1,5 @@
+FROM podemosprogresar/alejandria-base
+
+
+COPY src/validations src/validations
+COPY src/validations/app.py app.py

@@ -1,0 +1,4 @@
+FROM podemosprogresar/alejandria-base
+
+COPY src/sepomex src/sepomex
+COPY src/sepomex/app.py app.py

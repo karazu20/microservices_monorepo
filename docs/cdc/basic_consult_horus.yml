@@ -1,0 +1,57 @@
+Create a new person
+---
+parameters:
+  - in: body
+    name: nombre
+    type: string
+    required: true
+  - in: body
+    name: apellido_paterno
+    type: string
+    required: true
+  - in: body
+    name: apellido_materno
+    type: string
+    required: true
+  - in: body
+    name: telefono
+    type: string
+    required: true
+  - in: body
+    name: curp
+    type: string
+    required: true
+  - in: body
+    name: direccion
+    type: string
+    required: false
+  - in: body
+    name: colonia
+    type: string
+    required: true
+  - in: body
+    name: delegacion
+    type: string
+    required: true
+  - in: body
+    name: ciudad
+    type: string
+    required: true
+  - in: body
+    name: estado
+    type: string
+    required: true
+  - in: body
+    name: estado
+    type: string
+    required: true
+  - in: body
+    name: codigo_postal
+    type: string
+    required: true
+responses:
+  201:
+    description: A single user item
+    schema:
+      data: object
+

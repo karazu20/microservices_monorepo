@@ -1,0 +1,20 @@
+Create loan status
+---
+parameters:
+  - in: body
+    required: true
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          id_mambu:
+            type: string
+          estatus:
+            type: string
+responses:
+  200:
+    description: Create loan status
+    schema:
+      data: object
+

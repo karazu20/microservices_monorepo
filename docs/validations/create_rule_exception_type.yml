@@ -1,0 +1,13 @@
+Create a new rule exception type of validations in database validations
+---
+parameters:
+  - in: body
+    name: tipo
+    type: string
+    required: true
+responses:
+  201:
+    description: A single rule exception type item
+    schema:
+      data: object
+

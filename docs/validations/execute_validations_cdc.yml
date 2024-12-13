@@ -1,0 +1,34 @@
+Execute validations CDC
+---
+parameters:
+  - in: body
+    name: curp
+    type: string
+    required: true
+  - in: body
+    name: first_name
+    type: string
+    required: true
+  - in: body
+    name: last_name
+    type: string
+    required: true
+  - in: body
+    name: middle_name
+    type: string
+    required: false
+  - in: body
+    name: birth_date
+    type: string
+    required: true
+  - in: body
+    name: numero
+    type: string
+    required: false
+
+responses:
+  200:
+    description: Validations execute cdc
+    schema:
+      data: object
+

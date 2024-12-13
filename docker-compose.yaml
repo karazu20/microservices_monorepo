@@ -1,0 +1,41 @@
+version: "3"
+services:
+  api:
+    image: ${ALEJANDRIA_IMAGE_FULL}
+    container_name: alejandria_api
+    hostname: alejandria    
+    restart: always
+    ports:
+      - "5005:5000"
+    networks:
+      - podemos
+    env_file:
+      - .env
+    volumes:
+      - .:/alejandria
+      - /opt/podemosprogresar/var/alejandria/logs:/logs
+      - alejandria_files:/files
+
+  event_consumer:    
+    image: ${ALEJANDRIA_IMAGE_FULL}    
+    container_name: alejandria_pubsub
+    restart: always
+    networks:
+      - podemos
+    env_file:
+      - .env
+    volumes:
+      - .:/alejandria
+      - /opt/podemosprogresar/var/alejandria/logs:/logs
+      - alejandria_files:/files
+    entrypoint:
+      - python
+      - worker_pubsub.py
+
+networks:
+  podemos:
+    external: true
+
+volumes:
+  alejandria_files:
+    external: true

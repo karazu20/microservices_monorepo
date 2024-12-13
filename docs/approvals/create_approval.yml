@@ -1,0 +1,18 @@
+Approval loan in mambu
+---
+parameters:
+  - in: body
+    required: true
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          id_mambu:
+            type: string
+responses:
+  200:
+    description: Approval loan in mambu
+    schema:
+      data: object
+

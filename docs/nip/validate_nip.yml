@@ -1,0 +1,16 @@
+Validate nip
+---
+parameters:
+  - in: body
+    name: id
+    type: number
+    required: true
+  - in: body
+    name: nip
+    type: number
+    required: true
+responses:
+  200:
+    description: Validate NIP
+    schema:
+      data: object

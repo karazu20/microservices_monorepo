@@ -1,0 +1,5 @@
+FROM podemosprogresar/alejandria-base
+
+
+COPY src/closead_loans src/closead_loans
+COPY src/closead_loans/app.py app.py

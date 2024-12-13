@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+    <Consulta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/Consulta.xsd">
+        <Encabezado>
+            <ClaveOtorgante>{{ cdc_grantor_key }}</ClaveOtorgante>
+            <NombreUsuario>{{ cdc_username }}</NombreUsuario>
+            <Password>{{ cdc_password }}</Password>
+            <VersionXML>{{ cdc_xml_version }}</VersionXML>
+        </Encabezado>
+        <Personas>
+            {% for value in persons %}
+                <Persona>
+                    <DetalleConsulta>
+                        <FolioConsultaOtorgante>{{ cdc_grantor_query }}</FolioConsultaOtorgante>
+                        <ProductoRequerido>{{ cdc_required_product }}</ProductoRequerido>
+                        <TipoCuenta>{{ cdc_account_type }}</TipoCuenta>
+                        <ClaveUnidadMonetaria>{{ cdc_currency }}</ClaveUnidadMonetaria>
+                        <ImporteContrato>15000</ImporteContrato>
+                        <NumeroFirma>{{ nip }}</NumeroFirma>
+                    </DetalleConsulta>
+                    <Nombre>
+                        <ApellidoPaterno>{{ value.apellido_paterno }}</ApellidoPaterno>
+                        <ApellidoMaterno>{{ value.apellido_materno }}</ApellidoMaterno>
+                        <ApellidoAdicional/>
+                        <Nombres>{{ value.nombre }}</Nombres>
+                        <FechaNacimiento>{{ value.fecha_nacimiento }}</FechaNacimiento>
+                        <RFC>{{ value.rfc }}</RFC>
+                        <CURP>{{ value.curp }}</CURP>
+                        <Nacionalidad>{{ value.nacionalidad }}</Nacionalidad>
+                        <Residencia/>
+                        <EstadoCivil/>
+                        <Sexo/>
+                        <ClaveElectorIFE/>
+                        <NumeroDependientes/>
+                    </Nombre>
+                    <Domicilios>
+                        <Domicilio>
+                            <Direccion>{{ value.direccion }}</Direccion>
+                            <ColoniaPoblacion>{{ value.colonia }}</ColoniaPoblacion>
+                            <DelegacionMunicipio>{{ value.delegacion }}</DelegacionMunicipio>
+                            <Ciudad>{{ value.ciudad }}</Ciudad>
+                            <Estado>{{ value.estado }}</Estado>
+                            <CP>{{ value.codigo_postal }}</CP>
+                            <FechaResidencia/>
+                            <NumeroTelefono/>
+                            <TipoDomicilio/>
+                            <TipoAsentamiento/>
+                        </Domicilio>
+                    </Domicilios>
+                    <Empleos/>
+                    <CuentasReferencia>
+                        <NumeroCuenta/>
+                    </CuentasReferencia>
+                </Persona>
+            {% endfor %}
+        </Personas>
+    </Consulta>

@@ -1,0 +1,13 @@
+Create a new credit circle lot
+---
+parameters:
+  - in: body
+    name: archivo
+    type: string
+    required: true
+responses:
+  201:
+    description: A single user item
+    schema:
+      data: object
+

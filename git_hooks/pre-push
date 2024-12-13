@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+git fetch --all --prune
+export CI_COMMIT_MESSAGE="$(git log -n 1 --pretty=format:%s)"
+export CI_COMMIT_REF_NAME="$(git name-rev --name-only HEAD)"
+/bin/bash scripts/rules_push.sh || exit 1
+make lint || exit 1

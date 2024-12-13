@@ -1,0 +1,27 @@
+Create a new colony in database sepomex
+---
+parameters:
+  - in: body
+    name: nombre
+    type: string
+    required: true
+  - in: body
+    name: codigo_postal
+    type: string
+    required: true
+  - in: body
+    name: municipio
+    type: string
+    required: true
+  - in: body
+    name: ciudad
+    type: string
+  - in: body
+    name: asentamiento
+    type: string
+responses:
+  201:
+    description: A single user item
+    schema:
+      data: object
+

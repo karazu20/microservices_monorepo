@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Reporte de Crédito {{ credit.encabezado.folio_consulta }}</title>
+  </head>
+
+  <body class="reporteDeCredito">
+
+    <div class="header caja">
+      <div class="titulo">Reporte de Crédito</div>
+      <div id="encabezado" class="encabezado">
+        <p><span class="etiqueta">Fecha de Consulta :</span><span>{{ fecha_consulta.strftime('%A %d de %B de %Y')}}</span></p>
+        <p><span class="etiqueta">Folio Consulta :</span><span>{{ credit.encabezado.folio_consulta }}</span></p>
+      </div>
+    </div>
+
+    <div class="datosGenerales caja">
+      <div class="subtitulo">Datos Generales</div>
+      <div id="datosGenerales">
+        <p><span class="etiqueta">Nombre (s):</span><span>{{ credit.nombre.nombres|upper }}</span></p>
+        <p><span class="etiqueta">Apellido Paterno:</span><span>{{ credit.nombre.apellido_paterno|upper }}</span></p>
+        <p><span class="etiqueta">Apellido Materno:</span><span>{{ credit.nombre.apellido_materno|upper }}</span></p>
+        <p><span class="etiqueta">Fecha de Nacimiento:</span><span>{{ credit.nombre.fecha_nacimiento|to_date|upper }}</span></p>
+        <p><span class="etiqueta">RFC:</span><span>{{ credit.nombre.rfc|upper }}</span></p>
+        <p><span class="etiqueta">CURP:</span><span> {{ credit.nombre.curp|upper }}</span></p>
+      </div>
+    </div>
+
+    <div class="domicilios caja">
+      <div class="subtitulo">Domicilios</div>
+      <div id="domicilios">
+        <table class="resumen_cdc_tabla" aria-describedby="detalle de domicilio">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Calle y Número</th>
+              <th>Colonia</th>
+              <th>Del/Mpio</th>
+              <th>Ciudad</th>
+              <th>Estado</th>
+              <th>CP</th>
+              <th>Fecha de Registro</th>
+            </trtemp_>
+          </thead>
+          <tbody>{% for dom in credit.domicilios %}
+            <tr>
+              <td>{{ loop.index }}</td>
+              <td>{{ dom.direccion|upper }}</td>
+              <td>{{ dom.colonia_poblacion|upper }}</td>
+              <td>{{ dom.delegacion_municipio|upper }}</td>
+              <td>{{ dom.ciudad|upper }}</td>
+              <td>{{ dom.estado|upper }}</td>
+              <td>{{ dom.cp }}</td>
+              <td>{% if dom.fecha_registro_domicilio != '' %}{{ dom.fecha_registro_domicilio|upper }}{% endif %}</td>
+            </tr>
+          {% endfor %}</tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="cuentas caja">
+      <div class="subtitulo">Detalle de Cuentas</div>
+      <div id="cuentas">
+        <table class="resumen_cdc_tabla" aria-describedby="detalle de cuentas">
+          <thead>
+            <tr>
+              <th colspan="2">Descripción</th>
+              <th colspan="4">Montos</th>
+              <th colspan="4">Fechas</th>
+              <th>Peor Atraso</th>
+            </tr>
+            <th colspan="2"></th>
+            <th colspan="4">[Pesos]</th>
+            <th colspan="4">[dd/mmm/aa]</th>
+            <th></th>
+            <tr>
+            </tr>
+            <tr>
+              <th>Otorgante</th>
+              <th>Plazo</th>
+              <th>Aprobado</th>
+              <th>Actual</th>
+              <th>Vencido</th>
+              <th>a Pagar</th>
+              <th>Reporte</th>
+              <th>Apertura</th>
+              <th>Cierre</th>
+              <th>Pago</th>
+              <th>Situación</th>
+            </tr>
+          </thead>
+          <tbody>{% for cta in credit.cuentas %}
+            <tr>
+              <td>{{ cta.nombre_otorgante }}</td>
+              <td>{{ cta.numero_pagos }}</td>
+              <td>{{ cta.credito_maximo|comma_numbers }}</td>
+              <td>{{ cta.saldo_actual|comma_numbers }}</td>
+              <td>{{ cta.saldo_vencido|comma_numbers }}</td>
+              <td>{{ cta.monto_pagar|comma_numbers }}</td>
+              <td>{% if cta.fecha_reporte != '' %}{{ cta.fecha_reporte|upper }}{% endif %}</td>
+              <td>{% if cta.fecha_apertura_cuenta != '' %}{{ cta.fecha_apertura_cuenta|upper }}{% endif %}</td>
+              <td>{% if cta.fecha_cierre_cuenta != '' %}{{ cta.fecha_cierre_cuenta or '' |upper }}{% endif %}</td>
+              <td>{% if cta.fecha_ultimo_pago != '' %}{{ cta.fecha_ultimo_pago or '' |upper }}{% endif %}</td>
+              <td>{{ cta|get_situation }}</td>
+            </tr>
+          {% endfor %}</tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="consultas caja">
+      <div class="subtitulo">Consultas Realizadas</div>
+      <div id="consultas">
+        <table class="resumen_cdc_tabla" aria-describedby="detalle de consultas realizadas">
+          <thead>
+            <tr>
+              <th>Fecha de Consulta</th>
+              <th>Otorgante</th>
+            </tr>
+          </thead>
+          <tbody>{% for cons in credit.consultas_efectuadas %}
+            <tr>
+              <td>{% if cons.fecha_consulta != '' %}{{ cons.fecha_consulta|upper }}{% endif %}</td>
+              <td>{{ cons.nombre_otorgante|upper }}</td>
+            </tr>
+          {% endfor %}</tbody>
+        </table>
+      </div>
+    </div>
+
+  </body>
+</html>

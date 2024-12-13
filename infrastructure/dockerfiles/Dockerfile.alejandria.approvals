@@ -1,0 +1,5 @@
+FROM podemosprogresar/alejandria-base
+
+COPY src/approvals src/approvals
+COPY src/cdc/config.py src/cdc/config.py
+COPY src/approvals/app.py app.py

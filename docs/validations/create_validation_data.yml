@@ -1,0 +1,25 @@
+Create a new validation data in database validations
+---
+parameters:
+  - in: body
+    name: identificador_dato_validacion_id
+    type: integer
+    required: true
+  - in: body
+    name: llave
+    type: string
+    required: true
+  - in: body
+    name: valor
+    type: string
+    required: true
+  - in: body
+    name: tipo_dato
+    type: string
+    required: true
+responses:
+  201:
+    description: A single stage item
+    schema:
+      data: object
+

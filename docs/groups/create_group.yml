@@ -1,0 +1,13 @@
+Create a new group
+---
+parameters:
+  - in: body
+    name: nombre
+    type: string
+    required: true
+
+responses:
+  201:
+    description: Generate group
+    schema:
+      data: object

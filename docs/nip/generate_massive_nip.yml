@@ -1,0 +1,26 @@
+Execute massive nip send
+---
+parameters:
+  - in: body
+    required: true
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          nombre:
+            type: string
+          telefono:
+            type: string
+          curp:
+            type: string
+responses:
+  201:
+    description: Execute massive nip send
+    schema:
+      data: object
+  400:
+    description: Error in send NIP
+    schema:
+      data: object
+

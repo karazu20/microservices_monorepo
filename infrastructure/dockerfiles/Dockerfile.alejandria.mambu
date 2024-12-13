@@ -1,0 +1,4 @@
+FROM podemosprogresar/alejandria-base
+
+COPY src/mambu src/mambu
+COPY src/mambu/app.py app.py

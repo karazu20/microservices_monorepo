@@ -1,0 +1,13 @@
+Create a new rule execution status of validations in database validations
+---
+parameters:
+  - in: body
+    name: estatus
+    type: string
+    required: true
+responses:
+  201:
+    description: A single rule execution status item
+    schema:
+      data: object
+
